@@ -11,7 +11,7 @@ const TopicList = () => {
     useEffect(() => {
         const fetchTopics = async () => {
             try {
-                const apiUrl = process.env.API_URL;
+                const apiUrl = process.env.API_URL || 'http://localhost:3000';
                 const response = await axios.get(`${apiUrl}/api/topics`, {
                     // headers: { 'Cache-Control': 'no-cache' },
                 });
