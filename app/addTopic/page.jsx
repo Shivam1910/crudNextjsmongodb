@@ -1,5 +1,5 @@
 
-"use client"
+"use client";
 import React, { useState } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
@@ -18,9 +18,9 @@ const AddTopic = () => {
             toast.error('Title and description are required.');
             return;
         }
-
+        const apiUrl = process.env.API_URL;
         try {
-            const response = await axios.post('http://localhost:3000/api/topics', {
+            const response = await axios.post(`/api/topics`, {
                 title,
                 description,
             });

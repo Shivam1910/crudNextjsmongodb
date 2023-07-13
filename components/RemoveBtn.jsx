@@ -1,3 +1,4 @@
+"use client"
 import React from 'react';
 import { HiOutlineTrash } from 'react-icons/hi';
 import axios from 'axios';
@@ -9,7 +10,7 @@ const RemoveBtn = ({ id }) => {
 
         if (confirmed) {
             try {
-                const response = await axios.delete(`http://localhost:3000/api/topics?id=${id}`);
+                const response = await axios.delete(`/api/topics?id=${id}`);
                 if (response.status === 200) {
 
                     toast.success('Topic deleted successfully!');

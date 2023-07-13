@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
@@ -14,7 +14,7 @@ const EditTopicForm = ({ id, title, description }) => {
         e.preventDefault();
 
         try {
-            const response = await axios.put(`http://localhost:3000/api/topics/${id}`, {
+            const response = await axios.put(`/api/topics/${id}`, {
                 newTitle,
                 newDescription,
             });

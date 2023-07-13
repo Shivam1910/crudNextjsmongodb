@@ -14,7 +14,7 @@ const EditTopic = ({ params }) => {
     useEffect(() => {
         const getTopic = async () => {
             try {
-                const response = await axios.get(`http://localhost:3000/api/topics/${id}`, {
+                const response = await axios.get(`/api/topics/${id}`, {
                     headers: { 'Cache-Control': 'no-cache' },
                 });
 

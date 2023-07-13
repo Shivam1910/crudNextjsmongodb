@@ -1,5 +1,4 @@
-
-"use client"
+"use client";
 import React, { useEffect, useState } from 'react';
 import RemoveBtn from './RemoveBtn';
 import Link from 'next/link';
@@ -12,7 +11,8 @@ const TopicList = () => {
     useEffect(() => {
         const fetchTopics = async () => {
             try {
-                const response = await axios.get('http://localhost:3000/api/topics', {
+                const apiUrl = process.env.API_URL || 'http://localhost:3000';
+                const response = await axios.get(`${apiUrl}/api/topics`, {
                     // headers: { 'Cache-Control': 'no-cache' },
                 });
 
